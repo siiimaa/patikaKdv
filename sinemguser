@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Kdv {
+    public static void main(String[] args) {
+
+        // değişkenleri oluşturalım
+       double kdvsizTutar, kdvOrani;
+
+        //Scanner sınıfımızı oluşturalım
+        Scanner inp=new Scanner(System.in);
+        System.out.print("KDV'siz Tutar : ");
+        kdvsizTutar= inp.nextDouble();
+
+        //KDV oranını hesaplıyoruz
+        kdvOrani= (kdvsizTutar>=1000)? 0.8 : 0.18;
+        System.out.println("KDV oranı : "+kdvOrani);
+
+        //KDV tutarını buluyoruz
+        double kdvTutar = kdvsizTutar * kdvOrani;
+        System.out.println("KDV Tutarı : "+kdvTutar);
+
+        //KDV'li tutarı buluyoruz
+        double kdvliTutar = kdvsizTutar + kdvTutar;
+        System.out.println("KDV'li Tutar : "+kdvliTutar);
+    }
+}
